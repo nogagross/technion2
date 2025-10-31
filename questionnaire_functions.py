@@ -1,11 +1,7 @@
 import pandas as pd
 
 def analyze_questionnaire(prefix,file_path):
-    try:
-        df = pd.read_excel(file_path, sheet_name='Data')
-    except Exception as e:
-        print(f"⚠️ שגיאה בקריאת הקובץ {file_path}: {e}")
-        return
+    df = pd.read_csv(file_path)
 
     # סינון עמודות שמתחילות ב-prefix (ולא העמודה Subject_Code)
     data_cols = [col for col in df.columns if col.startswith(prefix) and col != 'Subject_Code']

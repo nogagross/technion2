@@ -6,7 +6,7 @@ from questionnaire_functions import (export_questionnaire,analyze_questionnaire)
 from pca_functions import (find_optimal_pca_dimensions,plot_pca_weights_two_cols_split,plot_pca_weights_separate_and_table)
 from clustring_functions import(pca_kmeans_minimal_outputs,run_kmeans_clustering,invert_binary_columns)
 from vizualizations_functions import (plot_grouped_bars,plot_multi_dataset_scatters_colored,plot_one_period_with_labels,get_labels_from_file,plot_one_period_with_labels_and_ttest,stats_by_group,safe)
-from preprocessing_functions import (load_one)
+from preprocessing_functions import (load_one,transition_for_pair)
 from functools import reduce
 import textwrap
 from scipy import stats
@@ -1022,6 +1022,104 @@ def main():
 
         paired_df.to_csv(out_dir / "paired_stats_report.csv", index=False)
 
+    out_before_after = transition_for_pair(
+        csv_path="data/only_Q_outputs/clusters_merged_by_subject.csv",
+        from_period="before",   # <-- you type this
+        to_period="after",  # <-- and this
+        out_dir="out",
+        save_prefix=None,
+        annotate=True
+    )
+
+    out_t1_after = transition_for_pair(
+        csv_path="data/only_Q_outputs/clusters_merged_by_subject.csv",
+        from_period="t1",  # <-- you type this
+        to_period="after",  # <-- and this
+        out_dir="out",
+        save_prefix=None,
+        annotate=True
+    )
+
+    out_t2_after = transition_for_pair(
+        csv_path="data/only_Q_outputs/clusters_merged_by_subject.csv",
+        from_period="t2",  # <-- you type this
+        to_period="after",  # <-- and this
+        out_dir="out",
+        save_prefix=None,
+        annotate=True
+    )
+
+    out_t3_after = transition_for_pair(
+        csv_path="data/only_Q_outputs/clusters_merged_by_subject.csv",
+        from_period="t3",  # <-- you type this
+        to_period="after",  # <-- and this
+        out_dir="out",
+        save_prefix=None,
+        annotate=True
+    )
+
+
+    def plot_subject_trajectories(
+            csv_path: str,
+            subjects: list[str],
+            timepoints: list[str] = ["before", "t1", "t2", "t3", "after"],
+            subject_col: str = "Subject_Code",
+            jitter: float = 0.03,  # vertical jitter to separate identical paths
+            annotate_last: bool = False,
+            figsize=(9, 5),
+    ):
+        df = pd.read_csv(csv_path)
+        df[subject_col] = df[subject_col].astype(str)
+
+        # keep only selected subjects & needed columns
+        cols = [subject_col] + timepoints
+        df = df.loc[df[subject_col].isin([str(s) for s in subjects]), cols].copy()
+
+        # long format
+        long = df.melt(id_vars=subject_col, value_vars=timepoints,
+                       var_name="time", value_name="state")
+        long = long.dropna(subset=["state"])
+
+        # enforce order on x
+        tp_to_x = {tp: i for i, tp in enumerate(timepoints)}
+        long["x"] = long["time"].map(tp_to_x).astype(int)
+
+        # ensure numeric (0/1)
+        long["state"] = pd.to_numeric(long["state"], errors="coerce")
+        long = long.dropna(subset=["state"])
+        long["state"] = long["state"].astype(float)
+
+        # jitter by subject so parallel lines are visible
+        subj_to_offset = {s: (i - (len(subjects) - 1) / 2) * jitter for i, s in enumerate(subjects)}
+        long["y"] = long["state"] + long[subject_col].map(subj_to_offset)
+
+        # plot
+        fig, ax = plt.subplots(figsize=figsize)
+        for s in subjects:
+            d = long[long[subject_col] == str(s)].sort_values("x")
+            if d.empty:
+                continue
+            ax.plot(d["x"], d["y"], marker="o", linewidth=2, label=str(s))
+            if annotate_last:
+                ax.text(d["x"].iloc[-1] + 0.05, d["y"].iloc[-1], str(s),
+                        va="center", fontsize=10)
+
+        ax.set_xticks(range(len(timepoints)))
+        ax.set_xticklabels(timepoints)
+        ax.set_yticks([0, 1])
+        ax.set_yticklabels(["0", "1"])
+        ax.set_ylim(-0.4, 1.4)
+        ax.set_xlabel("Time")
+        ax.set_ylabel("Cluster")
+        ax.set_title("Subject trajectories across time")
+        ax.grid(True, axis="x", alpha=0.3)
+        ax.legend(title="Subject", bbox_to_anchor=(1.02, 1), loc="upper left", frameon=False)
+        plt.tight_layout()
+        plt.show()
+
+    # Example: pick your 6 subjects
+    subjects = ["CT030", "NT007", "NT065", "NT017", "NT054", "NT102"]
+    plot_subject_trajectories("data/only_Q_outputs/clusters_merged_by_subject.csv", subjects)
 
 
 if __name__ == "__main__":

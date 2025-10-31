@@ -1,0 +1,8 @@
+Node	Visual Network	Somatomotor Network	Dorsal Attention Network	Ventral Attention (or Salience) Network	Limbic Network	Frontoparietal (Control) Network	Default Mode Network
+Visual Network	1.0	0.14896722838608775	n/a	0.0571001373254712	n/a	n/a	n/a
+Somatomotor Network	0.14896722838608775	1.0	n/a	0.4510959760367288	n/a	n/a	n/a
+Dorsal Attention Network	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+Ventral Attention (or Salience) Network	0.0571001373254712	0.4510959760367288	n/a	1.0	n/a	n/a	n/a
+Limbic Network	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+Frontoparietal (Control) Network	n/a	n/a	n/a	n/a	n/a	n/a	n/a
+Default Mode Network	n/a	n/a	n/a	n/a	n/a	n/a	n/a

@@ -6,6 +6,9 @@ from matplotlib import cm
 import re
 from typing import Optional, List,Iterable
 from sklearn.preprocessing import StandardScaler
+# transition_single.py
+from typing import Optional, Dict
+import os
 
 ID_PAT_RE = re.compile(r'(?P<prefix>[A-Za-z]{1,4})[-_ ]*0*(?P<num>\d+)$')
 def _load_table_any(file_path, sheet_name='Data'):
@@ -381,3 +384,166 @@ def load_one(path, out_col):
         raise ValueError(f"'Subject_Code' column not found in {path}")
     df["Subject_Code"] = df["Subject_Code"].astype(str)
     return df[["Subject_Code", out_col]]
+
+
+
+def compute_transition_matrices(
+    csv_path: str,
+    before_col: str = "before",
+    after_col: str = "after",
+):
+    """
+    Reads a CSV and returns (count_matrix, prob_matrix) for transitions before->after.
+    Only rows with non-null values in both columns are used.
+
+    Returns:
+        count_matrix: pd.DataFrame (index=before states, columns=after states)
+        prob_matrix:  pd.DataFrame (row-normalized counts, probabilities)
+        included_n:   int, number of rows used
+    """
+    df = pd.read_csv(csv_path)
+    both = df[df[before_col].notna() & df[after_col].notna()].copy()
+    count_matrix = pd.crosstab(both[before_col], both[after_col])
+    prob_matrix = count_matrix.div(count_matrix.sum(axis=1), axis=0)
+    return count_matrix, prob_matrix, len(both)
+
+
+
+def _compute_pair(df: pd.DataFrame, from_col: str, to_col: str):
+    if from_col not in df.columns or to_col not in df.columns:
+        raise ValueError(f"Columns not found. Have {list(df.columns)}; need '{from_col}' and '{to_col}'.")
+    both = df[df[from_col].notna() & df[to_col].notna()].copy()
+    n = len(both)
+    if n == 0:
+        return pd.DataFrame(), pd.DataFrame(), 0
+    counts = pd.crosstab(both[from_col], both[to_col])
+
+    # make it square over union of labels, so rows/cols align
+    labels = sorted(set(both[from_col].unique()).union(set(both[to_col].unique())))
+    counts = counts.reindex(index=labels, columns=labels, fill_value=0)
+
+    probs = counts.div(counts.sum(axis=1).replace(0, np.nan), axis=0).fillna(0.0)
+
+    counts.index.name = "From"
+    counts.columns.name = "To"
+    probs.index.name = "From"
+    probs.columns.name = "To"
+    return counts, probs, n
+
+
+
+def _plot_matrix(
+    mat: pd.DataFrame,
+    title: str,
+    out_path: Optional[str],
+    annotate: bool,
+    cmap: str = "Blues",          # <- choose any matplotlib colormap name
+    bold: bool = True,
+    fmt_prob: str = "{:.2f}",     # format for floats (probabilities)
+    fmt_int: str = "{:d}",        # format for ints (counts)
+):
+    if mat.empty:
+        return
+
+    # Set up plot and colormap/normalization
+    fig, ax = plt.subplots(figsize=(6, 5))
+    data = mat.values.astype(float)
+    vmin = np.nanmin(data)
+    vmax = np.nanmax(data)
+    im = ax.imshow(data, cmap=cmap, vmin=vmin, vmax=vmax)
+
+    ax.set_title(title)
+    ax.set_xlabel("To")
+    ax.set_ylabel("From")
+    ax.set_xticks(range(len(mat.columns)))
+    ax.set_xticklabels([str(c) for c in mat.columns])
+    ax.set_yticks(range(len(mat.index)))
+    ax.set_yticklabels([str(i) for i in mat.index])
+
+    # Annotate with dynamic text color (white on dark, black on light)
+    if annotate:
+        cmap_obj = plt.get_cmap(cmap)
+        norm = plt.Normalize(vmin=vmin, vmax=vmax)
+
+        # helper: perceived luminance (sRGB)
+        def luminance(rgb):
+            r, g, b, *_ = rgb  # rgba or rgb
+            return 0.299*r + 0.587*g + 0.114*b
+
+        for i in range(data.shape[0]):
+            for j in range(data.shape[1]):
+                val = data[i, j]
+
+                # choose text color based on background luminance at this cell
+                rgba = cmap_obj(norm(val))
+                L = luminance(rgba)
+                txt_color = "white" if L < 0.5 else "black"
+
+                # number formatting: ints vs floats
+                as_int = np.isclose(val, np.round(val))  # near-integer
+                s = fmt_int.format(int(round(val))) if as_int else fmt_prob.format(val)
+
+                ax.text(
+                    j, i, s,
+                    ha="center", va="center",
+                    color=txt_color,
+                    fontweight=("bold" if bold else "normal"),fontsize=14
+                )
+
+    fig.colorbar(im, ax=ax)
+    fig.tight_layout()
+    if out_path:
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        fig.savefig(out_path, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+
+def transition_for_pair(
+    csv_path: str,
+    from_period: str,
+    to_period: str,
+    out_dir: str = "transition_output",
+    save_prefix: Optional[str] = None,
+    annotate: bool = True,
+) -> Dict[str, Optional[str]]:
+    """
+    You specify 'from_period' and 'to_period' (column names in the CSV).
+    Saves PNGs and CSVs; returns their paths.
+    """
+    df = pd.read_csv(csv_path)
+    counts, probs, n = _compute_pair(df, from_period, to_period)
+
+    if save_prefix is None:
+        save_prefix = "transition"
+
+    base = f"{save_prefix}_{from_period}_to_{to_period}"
+    os.makedirs(out_dir, exist_ok=True)
+
+    counts_csv = os.path.join(out_dir, f"{base}_counts.csv")
+    probs_csv  = os.path.join(out_dir, f"{base}_probs.csv")
+    counts_img = os.path.join(out_dir, f"{base}_counts.png")
+    probs_img  = os.path.join(out_dir, f"{base}_probs.png")
+
+    if counts.empty:
+        # still write empty CSVs for consistency
+        pd.DataFrame().to_csv(counts_csv)
+        pd.DataFrame().to_csv(probs_csv)
+        counts_img_path = None
+        probs_img_path = None
+    else:
+        counts.to_csv(counts_csv)
+        probs.to_csv(probs_csv)
+        _plot_matrix(counts, f"Counts: {from_period} → {to_period} (n={n})", counts_img, annotate)
+        _plot_matrix(probs,  f"Probabilities: {from_period} → {to_period} (n={n})",  probs_img,  annotate)
+        counts_img_path = counts_img
+        probs_img_path = probs_img
+
+    return {
+        "from": from_period,
+        "to": to_period,
+        "included_n": n,
+        "counts_csv": counts_csv,
+        "probs_csv":  probs_csv,
+        "counts_image": counts_img_path,
+        "probs_image":  probs_img_path,
+    }
