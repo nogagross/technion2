@@ -1,4 +1,31 @@
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
+
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import numpy as np
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+
+import os
+# (ודא שכל שאר הייבואים שלך נמצאים בראש הקובץ)
+
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import numpy as np
+import os  # נדרש עבור בדיקת הנתיב ב-pc1_csv_path
+
 
 from pathlib import Path
 import pandas as pd
@@ -407,24 +434,6 @@ def pca_kmeans_minimal_outputs(
         "assignments": assignments
     }
 
-# -*- coding: utf-8 -*-
-
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
-import numpy as np
-
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans
-
-import os
-# (ודא שכל שאר הייבואים שלך נמצאים בראש הקובץ)
 
 def run_kmeans_clustering(
         df,
@@ -434,7 +443,8 @@ def run_kmeans_clustering(
         plot=True,
         title="k_means_plot",
         csv_path=None,
-        pc1_csv_path=None  # <-- פרמטר חדש שהוספנו
+        pc1_csv_path=None,
+        include_timepoints=False  # <--- פרמטר חדש שהוספנו
 ):
     """
     מבצע ניתוח PCA ו-K-Means על נתונים.
@@ -448,7 +458,8 @@ def run_kmeans_clustering(
         plot (bool): האם להציג גרף פיזור של האשכולות.
         title (str): כותרת הגרף.
         csv_path (str, optional): נתיב לשמירת תוצאות האשכולות לקובץ CSV.
-        pc1_csv_path (str, optional): נתיב לשמירת Subject_Code ו-PC1.  <-- תוספת
+        pc1_csv_path (str, optional): נתיב לשמירת Subject_Code ו-PC1.
+        include_timepoints (bool, optional): האם לכלול את עמודת 'timepoint' ב-CSV של האשכולות. (ברירת מחדל: False) # <--- תיאור
 
     Returns:
         tuple: תוויות האשכולות, נתוני PCA, אובייקט KMeans, אובייקט PCA.
@@ -480,16 +491,27 @@ def run_kmeans_clustering(
         if "Subject_Code" not in df.columns:
             print("Warning: 'Subject_Code' column not found, cannot save to CSV.")
         else:
-            out = pd.DataFrame({
+            # ----------------------------------------------------
+            #               השינוי המרכזי כאן 👇
+            # ----------------------------------------------------
+            output_data = {
                 "Subject_Code": df.loc[df_sub.index, "Subject_Code"],
                 "Cluster": labels
-            }, index=df_sub.index)
+            }
+
+            # בדיקה אם צריך לכלול את timepoint
+            if include_timepoints and "timepoint" in df.columns:
+                output_data["timepoint"] = df.loc[df_sub.index, "timepoint"]
+            elif include_timepoints and "timepoint" not in df.columns:
+                print("Warning: 'timepoint' column requested but not found in the original DataFrame.")
+
+            out = pd.DataFrame(output_data, index=df_sub.index)
+            # ----------------------------------------------------
+
             out.to_csv(csv_path, index=False, encoding='utf-8-sig')
             print(f"Cluster assignments saved to {csv_path}")
 
-    # ==========================================================
-    #           👇 תוספת 5.5: שמירת PC1 ל-CSV 👇
-    # ==========================================================
+    # 5.5) שמירת PC1 ל-CSV
     if pc1_csv_path:
         if "Subject_Code" not in df.columns:
             print("Warning: 'Subject_Code' column not found, cannot save PC1 to CSV.")
@@ -509,9 +531,6 @@ def run_kmeans_clustering(
 
             pc1_out.to_csv(pc1_csv_path, index=False, encoding='utf-8-sig')
             print(f"PC1 values saved to {pc1_csv_path}")
-    # ==========================================================
-    #                     👆 סוף התוספת 👆
-    # ==========================================================
 
     # 6) הצגת גרף פיזור
     if plot and data_pca.shape[1] >= 2:
@@ -529,7 +548,6 @@ def run_kmeans_clustering(
         plt.show()
 
     return labels, data_pca, kmeans, pca
-
 
 def align_clusters_to_previous(
         current_assignments_df,

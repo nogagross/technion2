@@ -368,7 +368,7 @@ def plot_pca_weights_separate_and_table(
         ax.set_ylabel("Weight", fontsize=fontsize)
         ax.set_title(f"{title} — PC{pc_index+1} top {top_n} loadings", fontsize=fontsize+2)
         ax.set_xticks(range(len(top_loadings.index)))
-        ax.set_xticklabels(top_loadings.index, rotation=45, ha="right", fontsize=fontsize-1)
+        # ax.set_xticklabels(top_loadings.index, rotation=45, ha="right", fontsize=fontsize-1)
         ax.tick_params(axis='y', labelsize=fontsize-1)
         ax.grid(alpha=0.25)
 
