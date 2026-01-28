@@ -1,0 +1,1224 @@
+====================================================================================================
+CSV FILE ANALYSIS REPORT - TECHNION PROJECT
+====================================================================================================
+
+This report lists all CSV files found in the project, indicating:
+- Which notebook/Python file created each CSV
+- Whether the CSV is used in other files
+- Whether it was created by code or uploaded manually
+
+====================================================================================================
+SUMMARY STATISTICS
+====================================================================================================
+
+Total CSV files analyzed: 650+ files
+Files created by notebooks: ~400+ files
+Files likely uploaded: ~250+ files
+
+====================================================================================================
+DETAILED CSV FILE LISTING
+====================================================================================================
+
+ROOT DIRECTORY CSV FILES:
+----------------------------------------------------------------------------------------------------
+all_ttest_merged.csv
+  Created by: regression_clinical_combined.ipynb (merge_ttest_results function)
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+groups_trajectory_from_q.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: LIKELY UPLOADED
+
+merged_pc_with_regression.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+merged_questionnaire_data_all_timepoints.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+october_data_output.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+phq_totals.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+regression_feature_importance_before_no_pca.csv
+  Created by: regression_without_pca.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+regression_parameters.csv
+  Created by: regression_combined.ipynb
+  Used in: regression_combined.ipynb, regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+subject_mri_list.csv
+  Created by: subject_check.py
+  Used in: subject_check.py
+  Type: CODE-GENERATED
+
+
+DATA DIRECTORY CSV FILES:
+----------------------------------------------------------------------------------------------------
+data/merged_no_nan.csv
+  Created by: regression_combined.ipynb
+  Used in: regression_combined.ipynb
+  Type: CODE-GENERATED
+
+data/merged_no_nan.xlsx
+  Created by: Unknown (Excel file, not CSV)
+  Used in: Unknown
+  Type: LIKELY UPLOADED
+
+data/subject_mri_list_with_period_flags.csv
+  Created by: subject_check.py
+  Used in: subject_check.py
+  Type: CODE-GENERATED
+
+
+ONLY_Q_OUTPUTS/COMBINED DIRECTORY (Main Analysis Outputs):
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/combined/combined_pca_components.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb, transition_analsyis.ipynb, regression_combined.ipynb, 
+           trajectory_corr.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoints_file_inverted_2.csv
+  Created by: only_q_combined.ipynb
+  Used in: transition_analsyis.ipynb, only_q_combined.ipynb, regression_combined.ipynb,
+           analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoints_file_inverted_2_with_meta_and_transitions.csv
+  Created by: transition_analsyis.ipynb
+  Used in: transition_analsyis.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/subjects_after_1_with_timepoints.csv
+  Created by: transition_analsyis.ipynb
+  Used in: transition_analsyis.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/clusters_combined.csv
+  Created by: only_q_combined.ipynb
+  Used in: analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/clusters_b.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/clusters_t1.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/clusters_t2.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/clusters_t3.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/clusters_after.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/clusters_merged_by_subject_from_combined.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/subject_cluster_labels_k2.csv
+  Created by: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Used in: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/subject_cluster_labels_k3.csv
+  Created by: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Used in: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/merged_data_final_selected.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/merged_data_only_PCA_subjects.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/october_filtered_selected_columns_complete_subjects.csv
+  Created by: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Used in: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/phq_gad7_totals.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/total_clinical_parameters.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/start_clinincal_subjects_pca.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/start_healthy_subjects_pca.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/subject_all_timepoints_pc1_3class_with_cluster.csv
+  Created by: Unknown
+  Used in: analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/subject_positions_by_thresholds.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/top_loadings_PC1.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+ONLY_Q_OUTPUTS/COMBINED/REGRESSION DIRECTORY:
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/combined/regression/regression_parameters_bits_mpas.csv
+  Created by: analsyis_in the combined_datatset.ipynb, only_q_combined.ipynb
+  Used in: analsyis_in the combined_datatset.ipynb, only_q_combined.ipynb, 
+           regression_combined.ipynb, only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_parameters_bits_mpas_ders_des.csv
+  Created by: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Used in: only_q_combined.ipynb, regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_b_with_regression_clean.csv
+  Created by: analsyis_in the combined_datatset.ipynb, only_q_seperated.ipynb
+  Used in: regression_clinical_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_t1_with_regression_clean.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_t2_with_regression_clean.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_t3_with_regression_clean.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_after_with_regression_clean.csv
+  Created by: analsyis_in the combined_datatset.ipynb, only_q_seperated.ipynb
+  Used in: regression_clinical_combined.ipynb, only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_pc_b_with_regression.csv
+  Created by: analsyis_in the combined_datatset.ipynb, only_q_combined.ipynb, only_q_seperated.ipynb
+  Used in: regression_combined_2.ipynb, regression_clinical_combined.ipynb, 
+           analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_pc_t1_with_regression.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: regression_combined_2.ipynb, regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_pc_t2_with_regression.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: regression_combined_2.ipynb, regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_pc_t3_with_regression.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: regression_combined_2.ipynb, regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_pc_after_with_regression.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: regression_combined_2.ipynb, regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_pc_b_with_regression_des.csv
+  Created by: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_ALL_PC_TRAJRCTORY_with_regression.csv
+  Created by: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/subjects_ALL_PC_DIFFERENCE_with_regression_des.csv
+  Created by: only_q_combined.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ALL_PC_trajectories.csv
+  Created by: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Used in: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/clusters_regression_before_after.csv
+  Created by: analsyis_in the combined_datatset.ipynb, only_q_seperated.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/pca_all_loadings_full_table.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/lasso_with_cv_b.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/lasso_with_cv_t1.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/lasso_with_cv_t2.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/lasso_with_cv_t3.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/lasso_with_cv_after.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/trajectory.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/trajectory_des_ders.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/regression_results/trajectory_no_after.csv
+  Created by: regression_combined_2.ipynb
+  Used in: regression_combined_2.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/all_ttest_merged.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_bits_b.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_mpas_b.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_maas_b.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_bits_t1.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_mpas_t1.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_maas_t1.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_bits_t2.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_mpas_t2.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_bits_t3.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_mpas_t3.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_bits_after.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/ref=regression_ttest/ttest_mpas_after.csv
+  Created by: regression_clinical_combined.ipynb
+  Used in: regression_clinical_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/merged_before_no_pca_with_regression.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/merged_t1_no_pca_with_regression.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/merged_t2_no_pca_with_regression.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/merged_t3_no_pca_with_regression.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/merged_after_no_pca_with_regression.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/summary_csv/regression_feature_importance_b_no_pca.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/regression_feature_importance_t1_no_pca.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/regression_feature_importance_t2_no_pca.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/regression_feature_importance_t3_no_pca.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/regression_feature_importance_after_no_pca.csv
+  Created by: regression_without_pca.ipynb
+  Used in: regression_without_pca.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/regression/without-pca/*_feature_csv/*_feature_importance.csv
+  Created by: regression_without_pca.ipynb (multiple feature importance files)
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+ONLY_Q_OUTPUTS/COMBINED/TIMEPOINT_FILES DIRECTORY:
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/combined/timepoint_files/timepoint_b.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_files/timepoint_t1.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_files/timepoint_t2.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_files/timepoint_t3.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_files/timepoint_after.csv
+  Created by: only_q_combined.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_files/pc1_separators_by_timepoint.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+
+ONLY_Q_OUTPUTS/COMBINED/TIMEPOINT_PAIR_FILES DIRECTORY:
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/combined/timepoint_pair_files/b_and_after.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files/t1_and_after.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files/t2_and_after.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files/t3_and_after.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files/phq_transition_summary_from_pair_files.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files_with_meta/b_and_after_with_meta.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files_with_meta/t1_and_after_with_meta.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files_with_meta/t2_and_after_with_meta.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files_with_meta/t3_and_after_with_meta.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files_with_meta/phq_transition_summary.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoint_pair_files_with_meta/phq_transition_summary_from_pair_files.csv
+  Created by: analsyis_in the combined_datatset.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+TRANSITION_ANALYSIS OUTPUTS:
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/combined/T1_networks_all_brain_all_subjects_with_after_normalized_by_etiv_NO_NAN.csv
+  Created by: transition_analsyis.ipynb
+  Used in: transition_analsyis.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/T1_lobes_all_brain_all_subjects_with_after_normalized_by_etiv_NO_NAN.csv
+  Created by: transition_analsyis.ipynb
+  Used in: transition_analsyis.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/T1_lobes_lr_subjects_with_after_normalized_by_etiv_NO_NAN.csv
+  Created by: transition_analsyis.ipynb
+  Used in: transition_analsyis.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/logistic_regression_cv_results.csv
+  Created by: transition_analsyis.ipynb
+  Used in: transition_analsyis.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/ttest_diff_by_baseline_group.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/ttest_ses1_vs_ses2_by_transition_group.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/mean_grayvol_ses1_ses2_by_transition_group.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/mean_diff_by_transition_group.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/lasso_regression_summary.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/lasso_predict_cortexvol_by_transition_group_summary.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/lasso_predict_ses2_by_baseline_summary.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/lasso_predict_ses2_by_after_summary.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/combined/timepoints_file_inverted_2_with_meta_and_B_TO_T1.csv
+  Created by: Unknown
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+ONLY_Q_OUTPUTS/5_TIMEPOINTS DIRECTORY:
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/5_timepoints/b_questionnaire.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/t1_questionnaire.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/t2_questionnaire.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/t3_questionnaire.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/after_questionnaire.csv
+  Created by: only_q_combined.ipynb
+  Used in: only_q_combined.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/subject_timepoint_presence.csv
+  Created by: Unknown
+  Used in: only_q_combined.ipynb, analsyis_in the combined_datatset.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/clusters_before.csv
+  Created by: only_q.ipynb, only_q_3_time_points.ipynb
+  Used in: only_q.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/clusters_t1.csv
+  Created by: only_q.ipynb, only_q_3_time_points.ipynb
+  Used in: only_q.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/clusters_t2.csv
+  Created by: only_q.ipynb, only_q_3_time_points.ipynb
+  Used in: only_q.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/clusters_t3.csv
+  Created by: only_q.ipynb, only_q_3_time_points.ipynb
+  Used in: only_q.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/clusters_after.csv
+  Created by: only_q.ipynb, only_q_3_time_points.ipynb
+  Used in: only_q.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/clusters_merged_by_subject.csv
+  Created by: only_q.ipynb
+  Used in: only_q.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/merged_file_inverted_2.csv
+  Created by: only_q.ipynb
+  Used in: only_q.ipynb, clustering_reiman.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/filtered_merged_data.csv
+  Created by: only_q.ipynb
+  Used in: only_q.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/filtered_merged_data_with_trajectory.csv
+  Created by: only_q.ipynb
+  Used in: only_q.ipynb, clustering_reiman.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/merged_file_inverted_2_3_time_points.csv
+  Created by: only_q_3_time_points.ipynb
+  Used in: only_q_3_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/filtered_merged_data_3_timepoints.csv
+  Created by: only_q_3_time_points.ipynb
+  Used in: only_q_3_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/filtered_merged_data_3_timepoints_with_trajectory.csv
+  Created by: only_q_3_time_points.ipynb
+  Used in: only_q_3_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/top_loadings_PC1.csv
+  Created by: only_q.ipynb, only_q_3_time_points.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/t_test_results_without_FDR.csv
+  Created by: only_q.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/pc1/before_data.csv
+  Created by: only_q.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/pc1/t1_data.csv
+  Created by: only_q.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/pc1/t2_data.csv
+  Created by: only_q.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/pc1/t3_data.csv
+  Created by: only_q.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/5_timepoints/pc1/after_data.csv
+  Created by: only_q.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+ONLY_Q_OUTPUTS/2_TIMEPOINTS DIRECTORY:
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/2_timepoints/clusters_before.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/clusters_t1.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/clusters_t2.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/clusters_t3.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/clusters_after.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/clusters_merged_by_subject.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/merged_file_inverted_2_2_time_points.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/filtered_merged_data_2_timepoints.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/2_timepoints/filtered_merged_data_2_timepoints_with_fluctuating.csv
+  Created by: only_q_2_time_points.ipynb
+  Used in: only_q_2_time_points.ipynb
+  Type: CODE-GENERATED
+
+
+ONLY_Q_OUTPUTS/SEPERATED DIRECTORY:
+----------------------------------------------------------------------------------------------------
+only_Q_outputs/seperated/clusters_before.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/clusters_t1.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/clusters_t2.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/clusters_t3.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/clusters_after.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/clusters_merged_by_subject_from_combined.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/timepoints_file_inverted_2.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/regression_parameters_bits_mpas.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/subjects_b_with_regression_clean.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/subjects_after_with_regression_clean.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/subjects_pc_b_with_regression.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/subjects_pc_after_with_regression.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/subjects_b_predictions_with_r2.csv
+  Created by: only_q_seperated.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/top_loadings_PC1.csv
+  Created by: only_q_seperated.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/pc1/before_data.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/pc1/t1_data.csv
+  Created by: only_q_seperated.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/pc1/t2_data.csv
+  Created by: only_q_seperated.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/pc1/t3_data.csv
+  Created by: only_q_seperated.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+only_Q_outputs/seperated/pc1/after_data.csv
+  Created by: only_q_seperated.ipynb
+  Used in: only_q_seperated.ipynb
+  Type: CODE-GENERATED
+
+
+PREP_T1 NOTEBOOK OUTPUTS:
+----------------------------------------------------------------------------------------------------
+data/stats_t1_fs/ses1/ses1_aparc_voxels_lh_rh.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_aseg_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_wmparc_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_aparc_summary_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_aseg_summary_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_aparc_voxels_merge.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_aparc_lobes_lr.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_aparc_lobes_full_brain.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses1/ses1_aparc_nets_full_brain.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aparc_voxels_lh_rh.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aseg_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_wmparc_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aparc_summary_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aseg_summary_data.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aparc_voxels_merge.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aparc_lobes_lr.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aparc_lobes_full_brain.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/stats_t1_fs/ses2/ses2_aparc_nets_full_brain.csv
+  Created by: prep_T1_first_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aparc_voxels_lh_rh.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aseg_data.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_wmparc_data.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aparc_summary_data.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aseg_summary_data.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aparc_voxels_merge.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aparc_lobes_lr.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aparc_lobes_full_brain.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+longitude_stats_without_normalizations/2_sessions_aparc_nets_full_brain.csv
+  Created by: prep_T1_2_ses.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+T1_YEO_DIFFUSION OUTPUTS:
+----------------------------------------------------------------------------------------------------
+ttest_yeo/bigfile_pruned_merged.csv
+  Created by: T1_yeo_diffution.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+ttest_yeo/*_ttest_results.csv (multiple files)
+  Created by: T1_yeo_diffution.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+ttest_yeo/*_correlation_results.csv (multiple files)
+  Created by: T1_yeo_diffution.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+ttest_yeo/*_mapping_table.csv (multiple files)
+  Created by: T1_yeo_diffution.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+CLUSTERING_REIMAN OUTPUTS:
+----------------------------------------------------------------------------------------------------
+data/SCHAEFER_mat_cor/csv_out/diff_map_clusters_ses1.csv
+  Created by: clustering_reiman.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+data/SCHAEFER_mat_cor/csv_out/diff_map_clusters_ses2.csv
+  Created by: clustering_reiman.ipynb
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+CAT12 OUTPUTS (Likely uploaded or generated by external tools):
+----------------------------------------------------------------------------------------------------
+cat12 outputs/cat12/*.csv (26 files)
+  Created by: Unknown (likely external CAT12 tool)
+  Used in: Unknown
+  Type: LIKELY UPLOADED
+
+cat12 outputs/Q_and_car12/*.csv (26 files)
+  Created by: Unknown (likely external CAT12 tool)
+  Used in: Unknown
+  Type: LIKELY UPLOADED
+
+
+RSFC DIRECTORY (Likely uploaded):
+----------------------------------------------------------------------------------------------------
+RSFC/*.csv (104 files)
+  Created by: Unknown
+  Used in: Unknown
+  Type: LIKELY UPLOADED
+
+
+T1 DIRECTORY (Likely uploaded):
+----------------------------------------------------------------------------------------------------
+T1/*.csv (31 files)
+  Created by: Unknown
+  Used in: Unknown
+  Type: LIKELY UPLOADED
+
+
+DATA/ORIGINAL_Q_DATA (Likely uploaded):
+----------------------------------------------------------------------------------------------------
+data/original_Q_data/*.csv (30 files)
+  Created by: Unknown
+  Used in: Unknown
+  Type: LIKELY UPLOADED
+
+
+DATA/ONLY_Q_OUTPUTS (Various outputs):
+----------------------------------------------------------------------------------------------------
+data/only_Q_outputs/*.csv (18 files)
+  Created by: Various notebooks (see archive_scripts/only_Q.py for reference)
+  Used in: Unknown
+  Type: CODE-GENERATED
+
+
+====================================================================================================
+KEY NOTEBOOKS AND THEIR OUTPUTS
+====================================================================================================
+
+1. only_q_combined.ipynb
+   - Main combined questionnaire analysis
+   - Creates: combined_pca_components.csv, clusters_*.csv, timepoints_file_inverted_2.csv,
+             regression files, merged data files
+
+2. transition_analsyis.ipynb
+   - Transition analysis with T1 data
+   - Creates: T1_*_normalized files, logistic_regression_cv_results.csv,
+             subjects_after_1_with_timepoints.csv
+
+3. analsyis_in the combined_datatset.ipynb
+   - Combined dataset analysis
+   - Creates: total_clinical_parameters.csv, regression files, cluster labels,
+             subject positions
+
+4. regression_combined.ipynb
+   - Regression analysis
+   - Creates: regression_parameters.csv, merged_no_nan.csv, various regression summaries
+
+5. regression_combined_2.ipynb
+   - Additional regression analysis with CV
+   - Creates: lasso_with_cv_*.csv files, trajectory regression files
+
+6. regression_without_pca.ipynb
+   - Regression without PCA
+   - Creates: merged_*_no_pca_with_regression.csv, feature importance files
+
+7. regression_clinical_combined.ipynb
+   - Clinical regression analysis
+   - Creates: ttest_*.csv files, lasso regression results
+
+8. only_q.ipynb
+   - Original questionnaire analysis (5 timepoints)
+   - Creates: clusters_*.csv, merged_file_inverted_2.csv, filtered_merged_data.csv
+
+9. only_q_2_time_points.ipynb
+   - 2 timepoints analysis
+   - Creates: clusters_*.csv, filtered_merged_data_2_timepoints.csv
+
+10. only_q_3_time_points.ipynb
+    - 3 timepoints analysis
+    - Creates: clusters_*.csv, filtered_merged_data_3_timepoints.csv
+
+11. only_q_seperated.ipynb
+    - Separated analysis
+    - Creates: clusters_*.csv, regression files, PC data files
+
+12. prep_T1_first_ses.ipynb
+    - T1 preprocessing for first session
+    - Creates: ses1_*.csv, ses2_*.csv files in data/stats_t1_fs/
+
+13. prep_T1_2_ses.ipynb
+    - T1 preprocessing for 2 sessions
+    - Creates: 2_sessions_*.csv files in longitude_stats_without_normalizations/
+
+14. T1_yeo_diffution.ipynb
+    - T1 Yeo diffusion analysis
+    - Creates: bigfile_pruned_merged.csv, ttest and correlation results
+
+15. clustering_reiman.ipynb
+    - Clustering analysis
+    - Creates: diff_map_clusters_ses1.csv, diff_map_clusters_ses2.csv
+
+====================================================================================================
+RECOMMENDATIONS FOR ORGANIZATION
+====================================================================================================
+
+1. CODE-GENERATED FILES (Safe to regenerate):
+   - All files in only_Q_outputs/ directories
+   - All files in data/stats_t1_fs/
+   - All files in longitude_stats_without_normalizations/
+   - All files in ttest_yeo/
+   - Root directory files: all_ttest_merged.csv, regression_parameters.csv, etc.
+
+2. LIKELY UPLOADED FILES (Keep, may be source data):
+   - Files in data/original_Q_data/
+   - Files in RSFC/
+   - Files in T1/
+   - Files in cat12 outputs/
+   - Root directory: groups_trajectory_from_q.csv (if not regenerated)
+
+3. FILES TO VERIFY:
+   - Check if files marked as "LIKELY UPLOADED" are actually generated by code
+   - Some files in data/ directory might be intermediate outputs
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

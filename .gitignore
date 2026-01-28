@@ -1,0 +1,31 @@
+# --- IGNORE ALL DATA FILES ---
+*.csv
+*.xlsx
+*.xls
+*.png
+*.jpg
+*.tsv
+*.iml
+
+# --- IGNORE ALL OUTPUT FOLDERS (wherever they are) ---
+**/only_Q_outputs/
+**/cat12 outputs/
+**/clusteres_output/
+**/feature_bar_plots_by_target/
+**/feature_bar_plots_dynamic_legend/
+**/feature_bar_plots_with_sentences/
+**/heatmaps_single_target/
+**/longitude_stats_without_normalizations/
+**/timepoint_plots/
+**/RSFC/
+**/T1/
+**/.idea/
+**/.venv/
+**/__pycache__/
+
+# --- SPECIFIC SUB-FOLDERS ---
+**/2_timepoints/
+**/3_timepoints/
+**/5_timepoints/
+**/combined/
+**/transition-matrixes/

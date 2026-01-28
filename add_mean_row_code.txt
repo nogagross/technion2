@@ -1,0 +1,54 @@
+# Code to add after calculating mean metrics and before printing results_df.to_string(index=False)
+# Replace this section in all three locations:
+
+# OLD CODE:
+print(f"\n{'='*70}")
+print("Detailed Results by Fold:")
+print(f"{'='*70}")
+print(results_df.to_string(index=False))
+
+# NEW CODE:
+print(f"\n{'='*70}")
+print("Detailed Results by Fold:")
+print(f"{'='*70}")
+
+# Create a copy of results_df for display
+display_df = results_df.copy()
+
+# Calculate mean row
+mean_row = {
+    'fold': 'Mean',
+    'r2': mean_r2,
+    'accuracy': mean_accuracy,
+    'precision': mean_precision,
+    'recall': mean_recall,
+    'f1': mean_f1,
+    'roc_auc': mean_roc_auc if not np.isnan(mean_roc_auc) else np.nan,
+    'n_train': int(results_df['n_train'].mean()) if 'n_train' in results_df.columns else '',
+    'n_test': int(results_df['n_test'].mean()) if 'n_test' in results_df.columns else ''
+}
+
+# Append mean row to display dataframe
+mean_df = pd.DataFrame([mean_row])
+display_df = pd.concat([display_df, mean_df], ignore_index=True)
+
+print(display_df.to_string(index=False))
+
+# This will add a "Mean" row at the bottom of the detailed results table showing the average across all folds/seeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
